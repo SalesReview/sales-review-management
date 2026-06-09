@@ -1365,7 +1365,7 @@ async function downloadQuotation() {
         y = 20;
         addLogoToCurrentPage(doc);
         
-        addHeading("Service Details & Deliverables");
+        addHeading("A) Service Details & Deliverables");
         addParagraph("The following services have been selected and include the deliverables mentioned below:");
         y += 8;
         
@@ -1449,7 +1449,7 @@ async function downloadQuotation() {
         
         doc.setFontSize(10);
         doc.setFont("helvetica", "bold");
-        doc.text("Services not included in this quotation are:", marginLeft, y);
+        doc.text("B) Services not included in this quotation are:", marginLeft, y);
         y += 8;
         
         doc.setFont("helvetica", "normal");
