@@ -374,7 +374,7 @@ const packages = {
     "1500": { name: "🚗 Pune Visit less than 30 kms from Lohegaon per visit upto 2.5 hrs", price: 1500, hsn: "9983", durationDays: 1 },
     "5000": { name: "🚗 Pune Visit 31 to 100 kms from Lohegaon per day upto 3 visits", price: 5000, hsn: "9983", durationDays: 1 },
     "7000": { name: "🚗 Visit 100 to 500 kms from Pune Lohegaon per day upto 3 visits", price: 7000, hsn: "9983", durationDays: 1 },
-    "3500": { name: "📊 Google Sheet Set Up Online", price: 3500, hsn: "9983", durationDays: 15 },
+    "3450": { name: "📊 Google Sheet Set Up Online", price: 3450, hsn: "9983", durationDays: 15 },
     "1299": { name: "📊 Weekly Monitoring Online", price: 1299, hsn: "9983", durationDays: 7 },
     "7495": { name: "📊 Monthly Monitoring Online", price: 7495, hsn: "9983", durationDays: 30 },
     "4495": { name: "📊 Quarterly Monitoring Online", price: 4495, hsn: "9983", durationDays: 90 },
@@ -391,7 +391,7 @@ const maxQuantities = {
     "qty-2400": 10, "qty-10": 500, "qty-5": 500, "qty-15": 500, "qty-12": 500,
     "qty-20": 500, "qty-18": 500, "qty-35000": 1, "qty-35500": 1, "qty-50": 50,
     "qty-2001": 5, "qty-2002": 5, "qty-25": 1000, "qty-4": 1000, "qty-1500": 3,
-    "qty-5000": 15, "qty-7000": 15, "qty-3500": 4, "qty-1299": 15, "qty-7495": 12,
+    "qty-5000": 15, "qty-7000": 15, "qty-3450": 4, "qty-1299": 15, "qty-7495": 12,
     "qty-4495": 4, "qty-50000": 12, "qty-9295": 5, "qty-48475": 12, "qty-24275": 6,
     "qty-224999": 3, "qty-14": 500, "qty-37": 1000,
 };
@@ -650,7 +650,7 @@ function calculateServiceDates() {
         "qty-12": 0.03, "qty-20": 0.03, "qty-18": 0.03, "qty-35000": 30,
         "qty-35500": 30, "qty-50": 0.35, "qty-2001": 1, "qty-2002": 4,
         "qty-25": 0.04, "qty-4": 0.04, "qty-1500": 1, "qty-5000": 1,
-        "qty-7000": 1, "qty-3500": 15, "qty-1299": 7, "qty-14": 0.03,
+        "qty-7000": 1, "qty-3450": 15, "qty-1299": 7, "qty-14": 0.03,
         "qty-37": 0.03, "qty-7495": 30, "qty-4495": 90, "qty-50000": 20,
         "qty-9295": 7, "qty-48475": 30, "qty-24275": 90, "qty-224999": 20,
     };
@@ -858,7 +858,7 @@ const serviceDetails = {
     "qty-1500": "• On-site visit within 30 km radius\n• Up to 2.5 hours duration\n• Travel included\n• Meeting attendance\n• Site inspection support",
     "qty-5000": "• Extended travel 31-100 km\n• Full day coverage\n• Up to 3 client visits per day\n• Accommodation not included\n• Local conveyance included",
     "qty-7000": "• Outstation visits 100-500 km\n• Multi-day trips possible\n• Up to 3 visits per day\n• Basic travel allowance included\n• Daily report submission",
-    "qty-3500": "• Custom Google Sheet setup\n• Formulas and automation\n• Data validation rules\n• Sharing and permission settings\n• Template ready for use",
+    "qty-3450": "• Custom Google Sheet setup\n• Formulas and automation\n• Data validation rules\n• Sharing and permission settings\n• Template ready for use",
     "qty-1299": "• Weekly sales data review\n• Performance analysis\n• Bottleneck identification\n• Recommendations report\n• 1 hour per week commitment",
     "qty-7495": "• Comprehensive monthly analysis\n• Sales trend identification\n• Team performance tracking\n• Strategic recommendations\n• Monthly review meeting",
     "qty-4495": "• Quarterly performance review\n• Year-on-year comparison\n• Strategic planning support\n• Market trend analysis\n• 3 months data consolidation",
@@ -925,7 +925,7 @@ async function downloadQuotation() {
         const puneVisitLess = document.getElementById("qty-1500")?.innerText || "0";
         const puneVisit31 = document.getElementById("qty-5000")?.innerText || "0";
         const visit100 = document.getElementById("qty-7000")?.innerText || "0";
-        const googleSheet = document.getElementById("qty-3500")?.innerText || "0";
+        const googleSheet = document.getElementById("qty-3450")?.innerText || "0";
         const weeklyMonitoring = document.getElementById("qty-1299")?.innerText || "0";
         const monthlyMonitoringOnline = document.getElementById("qty-7495")?.innerText || "0";
         const quarterlyMonitoringOnline = document.getElementById("qty-4495")?.innerText || "0";
@@ -1354,7 +1354,7 @@ async function downloadQuotation() {
         { id: "qty-1500", name: "🚗 Pune Visit less than 30 kms" },
         { id: "qty-5000", name: "🚗 Pune Visit 31 to 100 kms" },
         { id: "qty-7000", name: "🚗 Visit 100 to 500 kms" },
-        { id: "qty-3500", name: "📊 Google Sheet Set Up Online" },
+        { id: "qty-3450", name: "📊 Google Sheet Set Up Online" },
         { id: "qty-1299", name: "📊 Weekly Monitoring Online" },
         { id: "qty-7495", name: "📊 Monthly Monitoring Online" },
         { id: "qty-4495", name: "📊 Quarterly Monitoring Online" },
@@ -1594,7 +1594,7 @@ async function downloadQuotation() {
 
     addHeading("6. Commercial Notes");
     addSubHeading("6.1 Standard Sheet Setup");
-    addParagraph("Only Standard Sheet Set up with 10 Email Drafts + 10 Whatsapp Draft = INR 3500/- per month.");
+    addParagraph("Only Standard Sheet Set up with 10 Email Drafts + 10 Whatsapp Draft = INR 3450/- per month.");
     addParagraph("Extra INR 2000 for 1 Email Draft + 1 Whatsapp Draft + Travel allowance as per clause 3.4.3.");
     addSubHeading("6.2 Non-Standard Changes");
     addParagraph("Any non-standard changes in the sheet will be charged as per actuals which will include development and testing only.");
