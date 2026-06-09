@@ -1440,42 +1440,43 @@ async function downloadQuotation() {
         }
     });
     
-    if (notIncludedServices.length > 0) {
-        if (y + 30 > pageHeight - 40) {
-            doc.addPage();
-            y = 20;
-            addLogoToCurrentPage(doc);
-        }
-        
-        doc.setFontSize(10);
-        doc.setFont("helvetica", "bold");
-        doc.text("B) Services not included in this quotation are:", marginLeft, y);
-        y += 8;
-        
-        doc.setFont("helvetica", "normal");
-        doc.setFontSize(9);
-        
-        
+    // Services not included section - CORRECTED VERSION
 if (notIncludedServices.length > 0) {
-
-    // Page break safety
-    if (y + 40 > pageHeight - 40) {
+    if (y + 30 > pageHeight - 40) {
         doc.addPage();
         y = 20;
         addLogoToCurrentPage(doc);
     }
-
+    
     // Section Title
     doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-
-    doc.text(
-        "B) Scope Exclusions (Services not included in this engagement)",
-        marginLeft,
-        y
-    );
-
+    doc.text("B) Scope Exclusions (Services not included in this engagement)", marginLeft, y);
     y += 10;
+    
+    // Body text settings
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    
+    // Convert list into clean string
+    const cleanList = notIncludedServices.join("; ");
+    
+    // Executive paragraph
+    const paragraph = "This engagement explicitly excludes the following services: " + cleanList + ". These services are outside the defined scope of this proposal and will not be part of the current execution framework. Any requirement for inclusion will be treated as a separate scope enhancement and will be evaluated based on effort, complexity, and execution requirements before confirmation.";
+    
+    // Wrap text to page width
+    const wrappedText = doc.splitTextToSize(paragraph, 180);
+    
+    // Print paragraph
+    doc.text(wrappedText, marginLeft + 5, y);
+    y += wrappedText.length * 5 + 8;
+    
+    // Closing governance note
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "italic");
+    doc.text("Note: Scope extensions can be incorporated through mutual agreement and revised commercial alignment.", marginLeft + 5, y);
+    y += 12;
+}
 
     // Body text settings
     doc.setFontSize(9);
