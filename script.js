@@ -7,7 +7,14 @@ const specialLogins = [
         address: 'Eskay House at Eskay Resorts, Off Link Rd, Borivali West, Mumbai, Maharashtra 400091',
         email: 'hrm.elevators@eskaygroupindia.com'
     },
-	{
+    {
+        username: 'Grownex',
+        password: 'Grownex@080626#',
+        name: 'Grownex Industries Pvt Ltd - Mr. Kishore Rohida - Director',
+        address: 'R.S.No.301/302,Office No.3 B 3rd Floor, Galaxy Tower,New Shahupuri , Kolhapur, Maharashtra, India - 416003',
+        email: 'grownexindustries@gmail.com'
+    },
+    {
         username: 'Turbo',
         password: 'Turbo@010626#',
         name: 'Turbo Elevators - Prop - Anmol Sawkar',
