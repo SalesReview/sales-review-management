@@ -7,7 +7,14 @@ const specialLogins = [
         address: 'Eskay House at Eskay Resorts, Off Link Rd, Borivali West, Mumbai, Maharashtra 400091',
         email: 'hrm.elevators@eskaygroupindia.com'
     },
-	{
+    {
+        username: 'Grownex',
+        password: 'Grownex@080626#',
+        name: 'Grownex Industries Pvt Ltd - Mr. Kishore Rohida - Director',
+        address: 'R.S.No.301/302,Office No.3 B 3rd Floor, Galaxy Tower,New Shahupuri , Kolhapur, Maharashtra, India - 416003',
+        email: 'grownexindustries@gmail.com'
+    },
+    {
         username: 'Turbo',
         password: 'Turbo@010626#',
         name: 'Turbo Elevators - Prop - Anmol Sawkar',
@@ -876,6 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Service details mapping for detailed explanations - COMPLETE WITH ALL SERVICES
 const serviceDetails = {
     "qty-2400": "• Complete list of businesses in the pin code\n• Contact person names and designations\n• Phone numbers and email addresses\n• Address with Google Maps link\n• Categorization by industry type",
     "qty-10": "• Raw data collection from available online sources\n• No verification of accuracy\n• Basic fields: Name, Contact, Address\n• Quick turnaround within 24 hours",
