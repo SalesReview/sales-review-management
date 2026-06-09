@@ -883,7 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Service details mapping for detailed explanations - COMPLETE WITH ALL SERVICES
+// ==================== COMPLETE SERVICE DETAILS - FIXED ====================
 const serviceDetails = {
     "qty-2400": "• Complete list of businesses in the pin code\n• Contact person names and designations\n• Phone numbers and email addresses\n• Address with Google Maps link\n• Categorization by industry type",
     "qty-10": "• Raw data collection from available online sources\n• No verification of accuracy\n• Basic fields: Name, Contact, Address\n• Quick turnaround within 24 hours",
@@ -1340,6 +1340,7 @@ async function downloadQuotation() {
     doc.text(amountLines, 10, y);
     y += amountLines.length * lineHeight + 8;
 
+    // SELECTED SERVICES SECTION - NOW WILL SHOW ALL SELECTED SERVICES
     const selectedServices = [];
     Object.keys(quantities).forEach(key => {
         const qty = quantities[key];
@@ -1354,6 +1355,13 @@ async function downloadQuotation() {
                         qty: qty,
                         details: details
                     });
+                } else {
+                    // Fallback for any service without details
+                    selectedServices.push({
+                        name: removeEmojis(pkg.name),
+                        qty: qty,
+                        details: "• Service as per description above\n• Standard terms apply\n• Delivery as per agreed timeline"
+                    });
                 }
             }
         }
@@ -1364,7 +1372,7 @@ async function downloadQuotation() {
         y = 20;
         addLogoToCurrentPage(doc);
         
-        addHeading("Service Details & Deliverables");
+        addHeading("A) Service Details & Deliverables");
         addParagraph("The following services have been selected and include the deliverables mentioned below:");
         y += 8;
         
@@ -1399,7 +1407,8 @@ async function downloadQuotation() {
         y += 4;
     }
 
-    const allServices = [
+    // Services Not Included Section
+    const allServicesList = [
         { id: "qty-2400", name: "🔎 Market Mapping" },
         { id: "qty-10", name: "💻 Unverified Data Entry" },
         { id: "qty-35500", name: "🔎+💻 Market Mapping + Data Entry Uncounted" },
@@ -1431,7 +1440,7 @@ async function downloadQuotation() {
     ];
     
     const notIncludedServices = [];
-    allServices.forEach(service => {
+    allServicesList.forEach(service => {
         const qtyElement = document.getElementById(service.id);
         if (qtyElement && (parseInt(qtyElement.innerText) || 0) === 0) {
             notIncludedServices.push(removeEmojis(service.name));
@@ -1447,7 +1456,7 @@ async function downloadQuotation() {
         
         doc.setFontSize(10);
         doc.setFont("helvetica", "bold");
-        doc.text("Services not included in this quotation are:", marginLeft, y);
+        doc.text("B) Services not included in this quotation are:", marginLeft, y);
         y += 8;
         
         doc.setFont("helvetica", "normal");
@@ -1542,6 +1551,7 @@ async function downloadQuotation() {
     doc.save(`SRM_Quotation_${name.replace(/[^a-z0-9]/gi, '_')}_${quotationRef.replace(/[^a-z0-9]/gi, '_')}.pdf`);
 }
 
+// Disable Right Click
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
     return false;
