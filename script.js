@@ -1455,30 +1455,61 @@ async function downloadQuotation() {
         doc.setFont("helvetica", "normal");
         doc.setFontSize(9);
         
-        let lineText = "";
-        for (let i = 0; i < notIncludedServices.length; i++) {
-            if (lineText.length + notIncludedServices[i].length + 2 > 80) {
-                doc.text(lineText, marginLeft + 5, y);
-                y += 5;
-                lineText = notIncludedServices[i];
-            } else if (lineText === "") {
-                lineText = notIncludedServices[i];
-            } else {
-                lineText += ", " + notIncludedServices[i];
-            }
-        }
-        if (lineText !== "") {
-            doc.text(lineText, marginLeft + 5, y);
-            y += 5;
-        }
         
-        y += 5;
-        doc.setFontSize(9);
-        doc.setFont("helvetica", "bold");
-        doc.text("- If required, will be charged extra.", marginLeft + 5, y);
-        y += 12;
+if (notIncludedServices.length > 0) {
+
+    // Page break safety
+    if (y + 40 > pageHeight - 40) {
+        doc.addPage();
+        y = 20;
+        addLogoToCurrentPage(doc);
     }
 
+    // Section Title
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "bold");
+
+    doc.text(
+        "B) Scope Exclusions (Services not included in this engagement)",
+        marginLeft,
+        y
+    );
+
+    y += 10;
+
+    // Body text settings
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+
+    // Convert list into clean McKinsey-style string
+    const cleanList = notIncludedServices.join("; ");
+
+    // Executive paragraph (consulting style)
+    const paragraph =
+        "This engagement explicitly excludes the following services: " +
+        cleanList +
+        ". These services are outside the defined scope of this proposal and will not be part of the current execution framework. Any requirement for inclusion will be treated as a separate scope enhancement and will be evaluated based on effort, complexity, and execution requirements before confirmation.";
+
+    // Wrap text to page width
+    const wrappedText = doc.splitTextToSize(paragraph, 180);
+
+    // Print paragraph
+    doc.text(wrappedText, marginLeft + 5, y);
+
+    y += wrappedText.length * 5 + 8;
+
+    // Closing governance note (italic style like consulting docs)
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "italic");
+
+    doc.text(
+        "Note: Scope extensions can be incorporated through mutual agreement and revised commercial alignment.",
+        marginLeft + 5,
+        y
+    );
+
+    y += 12;
+}
     // Terms & Conditions Section
     doc.addPage();
     y = 20;
