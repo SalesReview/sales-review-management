@@ -7,14 +7,7 @@ const specialLogins = [
         address: 'Eskay House at Eskay Resorts, Off Link Rd, Borivali West, Mumbai, Maharashtra 400091',
         email: 'hrm.elevators@eskaygroupindia.com'
     },
-    {
-        username: 'Grownex',
-        password: 'Grownex@080626#',
-        name: 'Grownex Industries Pvt Ltd - Mr. Kishore Rohida - Director',
-        address: 'R.S.No.301/302,Office No.3 B 3rd Floor, Galaxy Tower,New Shahupuri , Kolhapur, Maharashtra, India - 416003',
-        email: 'grownexindustries@gmail.com'
-    },
-    {
+	{
         username: 'Turbo',
         password: 'Turbo@010626#',
         name: 'Turbo Elevators - Prop - Anmol Sawkar',
@@ -1134,17 +1127,14 @@ async function downloadQuotation() {
     let totalGSTAmount = 0;
     const lineHeight = 6;
 
-    // FIXED: Read directly from DOM spans instead of quantities object
-    const allQuantitySpans = document.querySelectorAll('[id^="qty-"]');
-    allQuantitySpans.forEach(span => {
-        const qty = parseInt(span.innerText) || 0;
-        const key = span.id;
-        if (qty > 0) {
+    Object.keys(quantities).forEach(key => {
+        if (quantities[key] > 0) {
             const priceKey = key.split("-")[1];
             const pkg = packages[priceKey];
             if (!pkg) return;
             const hsn = pkg.hsn || "-";
             const packageName = removeEmojis(pkg.name);
+            const qty = quantities[key];
             const price = pkg.price;
             const lineTotal = qty * price;
             
@@ -1276,12 +1266,10 @@ async function downloadQuotation() {
     doc.text(amountLines, 10, y);
     y += amountLines.length * lineHeight + 8;
 
-    // Service Details & Deliverables Section - FIXED to read from DOM
+    // Service Details & Deliverables Section
     const selectedServices = [];
-    const allQtySpans = document.querySelectorAll('[id^="qty-"]');
-    allQtySpans.forEach(span => {
-        const qty = parseInt(span.innerText) || 0;
-        const key = span.id;
+    Object.keys(quantities).forEach(key => {
+        const qty = quantities[key];
         if (qty > 0) {
             const priceKey = key.split("-")[1];
             const pkg = packages[priceKey];
