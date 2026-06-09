@@ -837,36 +837,103 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Service details mapping for detailed explanations
+// Service details mapping with Scope + Benefits (elaborated format)
 const serviceDetails = {
-    "qty-2400": "• Complete list of businesses in the pin code\n• Contact person names and designations\n• Phone numbers and email addresses\n• Address with Google Maps link\n• Categorization by industry type",
-    "qty-10": "• Raw data collection from available online sources\n• No verification of accuracy\n• Basic fields: Name, Contact, Address\n• Quick turnaround within 24 hours",
-    "qty-35500": "• Complete Market Mapping for entire city/area\n• Unlimited data entry for the month\n• Daily data updates\n• Priority support\n• Monthly progress reports",
-    "qty-5": "• Call duration tracking (per minute billing)\n• Basic information verification\n• Confirmation of contact details\n• Call recording available\n• Daily call summary report",
-    "qty-15": "• Understanding prospect requirements\n• Identifying decision makers\n• Budget range assessment\n• Timeline for purchase\n• Competitor information gathering",
-    "qty-12": "• Schedule meetings with decision makers\n• Confirm availability\n• Send calendar invites\n• Reminder calls before meetings\n• Appointment confirmation rate tracking",
-    "qty-20": "• Price negotiations support\n• Terms discussion\n• Objection handling\n• Closing assistance\n• Post-negotiation follow-up",
-    "qty-18": "• Payment reminder calls\n• Overdue payment follow-up\n• Payment confirmation verification\n• Resolution of payment issues\n• Daily payment tracking report",
-    "qty-35000": "• Unlimited calling minutes per month\n• Dedicated telecaller assigned\n• 5 days/week, 8 hours/day operation\n• Custom scripts as per your need\n• Weekly performance review",
-    "qty-14": "• Any type of telecalling support\n• Flexible call objectives\n• Customizable scripts\n• Per minute billing\n• Suitable for campaigns",
-    "qty-37": "• Fixed cost per connected call\n• No billing for unanswered calls\n• Call duration limited to 3 minutes\n• Ideal for quick updates/reminders\n• Best for high volume campaigns",
-    "qty-50": "• Professional quotation template\n• Company logo integration\n• Product/service details\n• Pricing and GST calculation\n• Email ready format",
-    "qty-2001": "• Detailed BOQ preparation\n• Presentation creation\n• Up to 8 hours work per day\n• Revisions included\n• Industry standard format",
-    "qty-2002": "• CRM data entry\n• Excel sheet management\n• Data cleaning and formatting\n• Daily progress tracking\n• Custom template creation",
-    "qty-25": "• Document format conversion\n• PDF to Word/Excel\n• Image to text conversion\n• Template application\n• Up to 500 pages per order",
-    "qty-4": "• Document upload to cloud\n• Download management\n• File organization\n• Access control setup\n• Bulk upload support",
-    "qty-1500": "• On-site visit within 30 km radius\n• Up to 2.5 hours duration\n• Travel included\n• Meeting attendance\n• Site inspection support",
-    "qty-5000": "• Extended travel 31-100 km\n• Full day coverage\n• Up to 3 client visits per day\n• Accommodation not included\n• Local conveyance included",
-    "qty-7000": "• Outstation visits 100-500 km\n• Multi-day trips possible\n• Up to 3 visits per day\n• Basic travel allowance included\n• Daily report submission",
-    "qty-3500": "• Custom Google Sheet setup\n• Formulas and automation\n• Data validation rules\n• Sharing and permission settings\n• Template ready for use",
-    "qty-1299": "• Weekly sales data review\n• Performance analysis\n• Bottleneck identification\n• Recommendations report\n• 1 hour per week commitment",
-    "qty-7495": "• Comprehensive monthly analysis\n• Sales trend identification\n• Team performance tracking\n• Strategic recommendations\n• Monthly review meeting",
-    "qty-4495": "• Quarterly performance review\n• Year-on-year comparison\n• Strategic planning support\n• Market trend analysis\n• 3 months data consolidation",
-    "qty-50000": "• Daily monitoring (20 days/month)\n• Real-time sales tracking\n• Instant alerts for deviations\n• Daily dashboard updates\n• Hourly monitoring available",
-    "qty-9295": "• On-site weekly review\n• Physical meeting at your office\n• In-person team interaction\n• On-ground issue resolution\n• Printed reports provided",
-    "qty-48475": "• On-site monthly review\n• Full day engagement\n• Strategic planning meeting\n• Team training session\n• Physical document signing",
-    "qty-24275": "• Quarterly on-site review\n• 3 months performance summary\n• Future roadmap planning\n• Stakeholder presentation\n• Physical report submission",
-    "qty-224999": "• Daily on-site monitoring\n• 20 days per month coverage\n• Full-time presence\n• Immediate issue resolution\n• Physical dashboard display"
+    "qty-2400": `
+Scope: This service provides a complete and structured business database for a selected pin code area. It includes verified business names, contact details, email IDs, physical addresses, Google Maps location links, and classification based on industry type. The data is organized in a way that supports direct business outreach and targeted marketing campaigns.
+
+• Complete list of businesses in the selected pin code  
+• Verified contact details including phone numbers and emails  
+• Full address with Google Maps integration  
+• Industry-wise categorization for segmentation  
+• Structured data format for easy use in CRM or sales tools  
+
+Benefit of Service: This service enables highly targeted lead generation and market penetration. It reduces time spent on manual research, improves outreach accuracy, and helps in building a strong, organized sales pipeline for faster business growth.
+    `,
+
+    "qty-10": `
+Scope: This service involves basic-level data collection from publicly available online sources. It is designed for quick turnaround requirements where speed is prioritized over detailed verification or deep validation of information.
+
+• Basic business name collection  
+• Contact numbers and available public details  
+• Limited address information  
+• Fast compilation from open sources  
+• Suitable for initial market testing  
+
+Benefit of Service: This service is ideal for rapid campaign launch and early-stage market exploration. It helps businesses quickly access raw leads for testing outreach strategies and validating market potential at low cost.
+    `,
+
+    "qty-35500": `
+Scope: This service provides complete market mapping for an entire city or large geographical area. It includes continuous data updates, structured tracking, and unlimited data entries throughout the service period to ensure complete market coverage.
+
+• Full city or area-wide business mapping  
+• Continuous monthly data updates  
+• Unlimited data entries during active service period  
+• Structured categorization and segmentation  
+• Priority support and reporting system  
+
+Benefit of Service: This service ensures complete market visibility and long-term data freshness. It supports large-scale expansion, strategic planning, and sustained sales pipeline development with up-to-date market intelligence.
+    `,
+
+    "qty-5": `
+Scope: This service focuses on short-duration call handling for basic verification and confirmation of contact details. It ensures that the collected data is active and usable for further sales engagement.
+
+• Basic contact verification through calls  
+• Confirmation of phone numbers and availability  
+• Call duration tracking  
+• Call summary reporting  
+• Minimal interaction qualification  
+
+Benefit of Service: This service improves data accuracy and reduces time wastage on invalid leads. It ensures that sales teams focus only on active and reachable prospects.
+    `,
+
+    "qty-15": `
+Scope: This service focuses on in-depth prospect qualification through structured conversations. It helps in understanding customer requirements, decision-making authority, budget capacity, and purchase timelines.
+
+• Requirement analysis of prospects  
+• Identification of decision makers  
+• Budget and financial understanding  
+• Purchase timeline mapping  
+• Competitor insight collection  
+
+Benefit of Service: This service strengthens lead quality and improves conversion readiness. It ensures that sales teams engage only with well-qualified prospects, increasing efficiency and reducing sales cycle time.
+    `,
+
+    "qty-12": `
+Scope: This service manages complete appointment scheduling with qualified decision makers. It includes coordination, confirmation, reminders, and follow-ups to ensure successful meeting execution.
+
+• Meeting scheduling with decision makers  
+• Calendar coordination and time slot management  
+• Reminder calls and confirmations  
+• Follow-up for meeting attendance  
+• Appointment tracking and reporting  
+
+Benefit of Service: This service increases meeting success rates and ensures efficient use of sales team time. It strengthens pipeline flow by converting leads into structured sales conversations.
+    `,
+
+    "qty-20": `
+Scope: This service supports negotiation activities including pricing discussions, objection handling, and closing assistance. It acts as a structured support system during critical sales stages.
+
+• Pricing and terms discussion support  
+• Objection handling assistance  
+• Closing conversation support  
+• Negotiation strategy guidance  
+• Post-negotiation follow-up tracking  
+
+Benefit of Service: This service improves deal closure efficiency and enhances negotiation outcomes. It helps in reducing deal drop-offs and strengthens revenue realization.
+    `,
+
+    "qty-18": `
+Scope: This service focuses on structured payment follow-ups including reminders, verification, and issue resolution. It ensures disciplined financial tracking and communication with clients.
+
+• Payment reminder calls  
+• Overdue payment follow-ups  
+• Payment confirmation tracking  
+• Issue resolution support  
+• Daily payment reporting  
+
+Benefit of Service: This service improves cash flow consistency and reduces payment delays. It ensures financial discipline and better revenue cycle management.
+    `
 };
 
 async function downloadQuotation() {
