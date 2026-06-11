@@ -188,6 +188,7 @@ const validUsers = [
     { username: 'accounts', password: 'Acc@789' },
     { username: 'director', password: 'Dir@999' },
     { username: 'Manisha.Patil', password: 'Srm@123' },
+	{ username: 'Kavita Vaidya', password: 'Kav@123' },
     { username: 'Rupesh Vaidya', password: 'Rav@07091978' }
 ];
 
